@@ -10,7 +10,7 @@ public class BoardController {
 
     @PostMapping("board")
     public String postBoard(){
-        return "이것은 포스트 통신입니다.";
+        return "이것은 포스트 통신입니다";
     }
 
     @GetMapping("/board")
