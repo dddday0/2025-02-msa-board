@@ -1,7 +1,9 @@
 package com.green.board.application;
 
+import com.green.board.application.model.BoardGetOneRes;
 import com.green.board.application.model.BoardGetRes;
 import com.green.board.application.model.BoardPostReq;
+import com.green.board.application.model.BoardPutReq;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +24,18 @@ public class BoardService {
 
     public int postBoard(BoardPostReq req){ return boardMapper.save(req);}
 
-        public List<BoardGetRes> getBoardList(){
+    public List<BoardGetRes> getBoardList(){
             return boardMapper.findAll();
         }
+        public BoardGetOneRes getBoardOne(int id) {
+        return boardMapper.findById(id);
     }
+
+        public int putBoard(BoardPutReq req) {
+            return boardMapper.update(req);
+        }
+
+     public int delBoard(int id) {
+        return boardMapper.delete(id);
+    }
+}
