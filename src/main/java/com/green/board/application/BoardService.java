@@ -32,7 +32,7 @@ public class BoardService {
     }
 
         public int putBoard(BoardPutReq req) {
-            return boardMapper.update(req);
+        return boardMapper.update(req);
         }
 
      public int delBoard(int id) {
